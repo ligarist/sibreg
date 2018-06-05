@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+  {{ recipe.name }}
+{% endblock %}
+{% block wrapper %}
+  <div class="product-detail" >
+    <div class="col-sm-4">
+      <img src="{% if recipe.image %}{{ recipe.image.url }}{% else %}{% static ''%}{% endif %}" class="img-responsive">
+    </div>
+    <div class="col-sm-8">
+      <h1>{{ recipe.name }}</h1>
+      <span>
+        {{ recipe.description | linebreaks}}
+      </span>
+
+    </div>
+  </div>
+{% endblock %}
+{% block wrapperrow2 %}
+    <p style="color: white; font-size: 1pt;">1</p>
+{% endblock %}

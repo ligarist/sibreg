@@ -1,0 +1,115 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+{% load bootstrap3 %}
+{% bootstrap_javascript %}
+{% bootstrap_css %}
+<title>{% block title %}Сибирский регион{% endblock %}</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="{% static "styles/layout.css" %}" rel="stylesheet" type="text/css" media="all">
+<script type="text/javascript" src="{% static 'django_modalview/js/bootstrap.min.js' %}"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
+  <link rel="icon" href="{% static "images/logo.png" %}">
+</head>
+<body id="top">
+<div class="wrapper row1">
+  <header id="header" class="clear">
+      {% block header %}
+
+    <div id="logo" class="fl_left">
+      <h1><a href="{% url "tovar:home" %}">Сибирский регион</a></h1>
+    </div>
+
+    <nav id="mainav" class="fl_right">
+    <div class="navbar-header">
+
+    </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="{% url "tovar:home" %}">Главная</a></li>
+       <li><a href="{%  url "tovar:ProductList" %}">Каталог</a></li>
+        <li><a href="{%  url "cook:CookList" %}">Рецепты</a></li>
+        <li><a href={%  url "tovar:about" %}>Контакты</a></li>
+      </ul>
+    </nav>
+      {% endblock %}
+
+  </header>
+</div>
+<div class="wrapper">
+    {% block wrapper %}
+
+    {% endblock %}
+</div>
+
+<div class="wrapper row2">
+    {% block wrapperrow2 %}
+
+
+    {% endblock %}
+</div>
+<div class="wrapper row6">
+{% block wrapperrow6 %}
+{% endblock %}
+</div>
+<div class="wrapper row3">
+{% block wrapperrow3 %}
+{% endblock %}
+</div>
+
+<div class="wrapper row4">
+{% block wrapperrow4 %}
+  <footer id="footer" class="clear">
+      {% block footer %}
+
+    <div class="one_quarter first">
+      <h6 class="title">Сибирский регион</h6>
+      <address class="btmspace-15">
+      Республика Бурятия<br>
+      Улан-Удэ<br>
+      Трактовая 12<br>
+      </address>
+      <ul class="nospace">
+        <li class="btmspace-10"><span class="fa fa-phone"></span> 8–967–620–06–66</li>
+          <li class="btmspace-10"><span class="fa fa-phone"></span> 8-(3012) 50‒06‒66</li>
+        <li><span class="fa fa-envelope-o"></span> prioskol03rus@mail.ru</li>
+      </ul>
+    </div>
+    <div class="one_quarter">
+      <h6 class="title">Навигация</h6>
+      <ul class="nospace linklist" >
+        <li><a style="color: #ffde59" href="{% url "tovar:home" %}">Главная</a></li>
+        <li><a style="color: #ffde59" href="{% url "tovar:ProductList" %}">Каталог</a></li>
+        <li><a style="color: #ffde59" href="{% url "cook:CookList" %}">Рецепты</a></li>
+        <li><a style="color: #ffde59" href="{% url "tovar:about" %}">Контакты</a></li>
+      </ul>
+    </div>
+  <div class="one_quarter">
+<div class="container">
+<form action="{% url "tovar:contact" %}">
+  <button type="submit" value="submit">Написать нам</button>
+</form>
+</div>
+</div>
+<div class="one_quarter"><img src="{% static "images/logo2.png" %}"></div>
+
+      {% endblock %}
+  </footer>
+{% endblock %}
+</div>
+<div class="wrapper row5">
+    {% block wrapperrow5 %}
+  <div id="copyright" class="clear">
+    <p class="fl_left">Все права защищены &copy; 2017 Сибирский регион</p>
+  </div>
+    {% endblock %}
+</div>
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+<script src="{%static "scripts/jquery.min.js"%}"></script>
+<script src="{% static "scripts/jquery.backtotop.js"%}"></script>
+<script src="{% static "scripts/jquery.mobilemenu.js"%}"></script>
+<script src="{% static "scripts/jquery.flexslider-min.js"%}"></script>
+</body>
+</html>

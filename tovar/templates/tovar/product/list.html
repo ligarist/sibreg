@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+  {% if category %} {{ category.name }} {% else %}Продукция{% endif %}
+{% endblock %}
+{% block wrapper %}
+    <img src="{% static "images/product.png" %}">
+  <div id="sidebar" class="col-sm-3" >
+    <h3>Категории</h3>
+    <ul>
+      <li {% if not category %} class="selected" {% endif %}>
+        <a href="{% url "tovar:ProductList" %}">Все</a>
+      </li>
+      {% for cat in categories %}
+        <li {% if category.slug == cat.slug %} class="selected" {% endif %}>
+          <a href="{{ cat.get_absolute_url }}">{{ cat.name }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div id="main" class="product_list col-sm-9">
+    <h1>{% if category %}{{ category.name }}{% else %}Продукция{% endif %}</h1>
+    <div class="items row">
+      {% for product in products %}
+        <div class="item col-sm-4" >
+          <a href="{{ product.get_absolute_url }}">
+            <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no-image.jpg"%}{% endif %}" class="img-responsive">
+          </a>
+          <a href="{{ product.get_absolute_url }}">{{ product.name }}</a><br>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
+{% block wrapperrow2 %}
+    <p style="color: white; font-size: 1pt;">1</p>
+{% endblock %}
+

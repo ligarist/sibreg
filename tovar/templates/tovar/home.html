@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block wrapper %}
+  <div id="slider" class="clear">
+
+    <div class="flexslider basicslider">
+      <ul class="slides">
+        <li><img src="{%  static "images/product.png" %}" alt="">
+          <div class="txtoverlay">
+            <div class="centralise">
+              <div class="verticalwrap">
+                <article>
+                  <h2 class="heading uppercase"></h2>
+                  <p><a class="btn orange pushright" href="{% url "tovar:ProductList" %}">Качественная продукция</a></p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li><img src="{%  static "images/cook.png" %}" alt="">
+          <div class="txtoverlay">
+            <div class="centralise">
+              <div class="verticalwrap">
+                <article>
+                  <h2 class="heading uppercase"></h2>
+                  <p><a class="btn red pushright" href="{% url "cook:CookList" %}">Вкуснейшие рецепты</a></p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+    {% endblock %}
+{% block wrapperrow6 %}
+
+  <section id="cta" class="clear">
+
+    <div class="three_quarter first">
+      <h2 class="heading">Мы поставляем самую лучшую продукцию!</h2>
+      <p>Компания ООО"Сибирский регион" является официальным дистрибьютором ЗАО "Приосколье" в Республике Бурятия.</p>
+    </div>
+    <div class="one_quarter"><a class="btn" href="http://www.prioskol.ru/">Наши партнеры <span class="fa fa-arrow-right"></span></a></div>
+
+  </section>
+{% endblock %}
+
+
+    {% block wrapperrow3 %}
+  <main class="container nospace clear">
+
+    <div class="group">
+      <div class="one_half first paditout">
+
+        <ul class="nospace group">
+          <li class="btmspace-30">
+            <article class="service largeicon"><i class="icon nobg circle fa fa-line-chart"></i>
+              <h6 class="heading">Мы первые!</h6>
+              <p>Наша компания является первыим и на сегодняшний день единственныйм официальным поставщиком ЗАО "Приосколье"</p>
+            </article>
+          </li>
+          <li class="btmspace-30">
+            <article class="service largeicon"><i class="icon nobg circle fa fa-thumbs-o-up"></i>
+              <h6 class="heading">Качественная продукция!</h6>
+              <p>Мы поставляем только качественную, замороженную продукцию из курицы, прошедшую все проверки!</p>
+            </article>
+          </li>
+          <li>
+            <article class="service largeicon"><i class="icon nobg circle fa fa-truck"></i>
+              <h6 class="heading">Ищите в сетях нащего города!</h6>
+              <p>Своевременная доставка свежей продукции в сети нашего города.</p>
+            </article>
+          </li>
+        </ul>
+      </div>
+         <div class="one_half"><img  src="{% static "images/pr_p_grudka.jpg" %}" alt=""></div>
+    </div>
+
+
+
+    <div class="clear"></div>
+  </main>
+    {% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+  {{ product.name }}
+{% endblock %}
+{% block wrapper %}
+  <div class="product-detail">
+    <div class="col-sm-4" style="" >
+      <img  style="width: 500px;" src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no-image.jpg"%}{% endif %}" class="img-responsive">
+    </div>
+    <div class="col-sm-8" style="padding-bottom: 300px;">
+      <h1>{{ product.name }}</h1>
+      <h2><a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a></h2>
+      <span >
+        {{ product.description | linebreaks}}
+      </span>
+    </div>
+  </div>
+{% endblock %}
+{% block wrapperrow2 %}
+    <p style="color: white; font-size: 1pt;">1</p>
+{% endblock %}

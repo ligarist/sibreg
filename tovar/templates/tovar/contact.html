@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+{% block wrapper %}
+     <div class="items row">
+     <div class="col-sm-3">
+     </div>
+    <div class="col-sm-6">
+    <h1 style="color: #0eaf8b;">Напишите нам!</h1>
+    <article>
+    {% if contact_form %}
+        <form id="contact_form" method="post" action="{% url "tovar:contact" %}">
+            {% csrf_token %}
+            {% bootstrap_form contact_form %}
+            {% buttons %}
+                <button type="submit" class="btn btn-primary" style="background-color: #0eaf8b; border-color: #0eaf8b">{% bootstrap_icon "send" %}&nbsp;&nbsp;Отправить</button>
+            {% endbuttons %}
+        </form>
+    {% else %}
+        <p style="color: #0eaf8b; padding-bottom: 500px;">Сообщение отправлено</p>
+    {% endif %}
+    </article>
+    </div>
+     </div>
+{% endblock %}

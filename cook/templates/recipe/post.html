@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    {% if category %} {{ category.name }} {% else %} Рецепты {% endif %}
+{% endblock %}
+
+{% block wrapper %}
+    <div class="row">
+    <img src="{% static "images/recipe.png" %}">
+    <div class="col-sm-1">
+     </div>
+<div class="col-sm-10">
+    <h1 style=>{% if category %}{{ category.name }}{% else %}Рецепты{% endif %}</h1>
+
+
+      {% for recipe in recipes %}
+          <div class="panel panel-default">
+         <div class="panel-heading">
+             <h4><a href="{{ recipe.get_absolute_url }}">{{ recipe.name }}</a></h4></div>
+      <div class="panel-body">
+       <div class="col-sm-4">
+        <a href="{{ recipe.get_absolute_url }}">
+      <img src=" {% if recipe.image %}{{ recipe.image.url }}{% else %}{% static "img/no-image.jpg"%}{% endif %}" >
+        </a>
+       </div>
+       <div class="col-sm-8">
+          <span>{{ recipe.get_short_text | linebreaks}}</span>
+        </div>
+          </div>
+          </div>
+
+      {% endfor %}
+    </div>
+    </div>
+
+{% endblock %}
+{% block wrapperrow2 %}
+    <p style="color: white; font-size: 1pt;">1</p>
+{% endblock %}
+
+
+
+

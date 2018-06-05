@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}Контакты{% endblock %}
+{% block wrapper %}
+ <div class="row">
+    <div class="col-sm- col-md-6">
+      <script charset="utf-8" src="http://widgets.2gis.com/js/DGWidgetLoader.js"></script>
+      <script charset="utf-8">new
+      DGWidgetLoader
+      ({"width":640,"height":600,
+          "borderColor":"#a3a3a3",
+          "pos":{"lat":51.82804681776212,
+              "lon":107.60481834411623,"zoom":16},
+          "opt":{"city":"ulanude"},"org":[{"id":"70000001027258421"}]});</script>
+      <noscript style="color:#c00;font-size:16px;font-weight:bold;">Виджет карты использует JavaScript. Включите его в настройках вашего браузера.</noscript>
+    </div>
+    <div class="col-sm-6 col-md-6" >
+      <div class="about">
+       <h2>ООО "Сибирский регион"</h2>
+       <p >Република Бурятия<br>
+          город Улан-Удэ<br>
+          улица Трактовая, 12<br>
+          <span class="fa fa-phone"></span> 8-967-620-06-66<br>
+          <span class="fa fa-phone"></span> 8-(3012) 50‒06‒66<br>
+          <span class="fa fa-envelope-o"></span>prioskol03rus@mail.ru<br>
+          Мы ответим на любые ваши вопросы!.<br>
+          Если вы интересуетесь ценами на нашу продукцию, пожалуйста, заполните контактную форму на наш прайс лист.<span class="fa fa-hand-o-down"></span><br>
+        </p>
+      </div>
+    </div>
+ </div>
+{% endblock %}
+
